@@ -1,4 +1,9 @@
 ./ui-client/node_modules
+./create-post/node_modules
+./create-comment/node_modules
+./query/node_modules
+./event-bus/node_modules
+./moderate-comment/node_modules
 # Mac files
 .DS_Store
 ./ui-client/public
