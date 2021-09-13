@@ -1,4 +1,4 @@
-# Blogs Application
+# Blog Posts Application
 
 Blogs Application - This application is used as an introduction to containerization using Docker and orchestring thhese containers using Kuebernetes. In addition, we are using Skaffold to automate the build, push and deployment to the Kubernetes cluster.
 
