@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: create-post-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: create-post
+  template:
+    metadata:
+      labels:
+        app: create-post
+    spec:
+      containers:
+        - name: create-post
+          image: ashtonferns/create-post
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: create-post-clusterip-srv
+spec:
+  selector:
+    app: create-post
+  ports:
+    - name: create-post
+      protocol: TCP
+      port: 4000
+      targetPort: 4000

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ui-client-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ui-client
+  template:
+    metadata:
+      labels:
+        app: ui-client
+    spec:
+      containers:
+        - name: ui-client
+          image: ashtonferns/ui-client
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ui-client-srv
+spec:
+  selector:
+    app: ui-client
+  ports:
+    - name: ui-client
+      protocol: TCP
+      port: 3000
+      targetPort: 3000

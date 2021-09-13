@@ -1,0 +1,7 @@
+./ui-client/node_modules
+# Mac files
+.DS_Store
+./ui-client/public
+# dotenv environment variables file
+.env
+blogposts.drawio

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: moderate-comment-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: moderate-comment
+  template:
+    metadata:
+      labels:
+        app: moderate-comment
+    spec:
+      containers:
+        - name: moderate-comment
+          image: ashtonferns/moderate-comment
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: moderate-comment-srv
+spec:
+  selector:
+    app: moderate-comment
+  ports:
+    - name: moderate-comment
+      protocol: TCP
+      port: 4003
+      targetPort: 4003
